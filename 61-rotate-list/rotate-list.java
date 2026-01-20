@@ -13,7 +13,7 @@ class Solution {
         if (head == null || head.next == null || k == 0)
             return head;
 
-        // 1️⃣ Find length and last node
+        //  Find length and last node
         ListNode temp = head;
         int length = 1;
 
@@ -22,10 +22,10 @@ class Solution {
             length++;
         }
 
-        // 2️⃣ Make circular
+        // Make circular
         temp.next = head;
 
-        // 3️⃣ Find new tail
+        // Find new tail
         k = k % length;
         int stepsToNewTail = length - k;
 
@@ -34,7 +34,7 @@ class Solution {
             newTail = newTail.next;
         }
 
-        // 4️⃣ Break circle
+        // Break circle
         ListNode newHead = newTail.next;
         newTail.next = null;
 
